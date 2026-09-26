@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumsyTech | About</title>
+    <meta name="description" content="Learn about SumsyTech, our mission, values, and the people-driven approach behind every solution.">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="./hero/hero.html" class="logo" aria-label="SumsyTech home">
+                <img src="./hero/sumsytech.jpg" alt="SumsyTech logo">
+                <span>SumsyTech</span>
+            </a>
+
+            <nav aria-label="Main navigation" class="desktop-nav">
+                <ul>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./team.html">Team</a></li>
+                    <li><a href="./contact.html" class="nav-button">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-sidebar-overlay" aria-hidden="true"></div>
+
+        <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile navigation" aria-hidden="true">
+            <div class="mobile-sidebar-header">
+                <a href="./hero/hero.html" class="logo" aria-label="SumsyTech home">
+                    <img src="./hero/sumsytech.jpg" alt="SumsyTech logo">
+                    <span>SumsyTech</span>
+                </a>
+                <button class="mobile-menu-close" aria-label="Close menu">×</button>
+            </div>
+
+            <nav aria-label="Mobile navigation links" class="mobile-nav">
+                <ul>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./team.html">Team</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+    <main id="top">
+        <section class="page-hero about-page-hero">
+            <div class="container page-hero-inner">
+                <div>
+                    <span class="kicker">About SumsyTech</span>
+                    <h1>Helping people and businesses turn ideas into meaningful progress.</h1>
+                    <p>We are a technology and education-focused company built around practical innovation, human-centered design, and real-world problem solving.</p>
+                </div>
+                <div class="mini-panel">
+                    <div>
+                        <strong>Mission</strong>
+                        <span>Build useful digital experiences</span>
+                    </div>
+                    <div>
+                        <strong>Vision</strong>
+                        <span>Enable smarter growth</span>
+                    </div>
+                    <div>
+                        <strong>Focus</strong>
+                        <span>Technology, learning, and clarity</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="container story-grid">
+                <div class="story-copy">
+                    <span class="kicker">Who we are</span>
+                    <h2>We bring strategy, creativity, and execution together.</h2>
+                    <p>SumsyTech was created to help people move from uncertainty to action. We combine technology, education, and innovation to solve actual challenges in a way that is practical, scalable, and easy to understand.</p>
+                    <p>Our approach is simple: listen closely, design thoughtfully, and build efficiently. Whether the goal is a business website, a digital strategy, or a learning experience, we focus on clear outcomes and sustainable growth.</p>
+                </div>
+
+                <div class="story-panel">
+                    <div>
+                        <strong>Human-centered</strong>
+                        <span>We design for people first.</span>
+                    </div>
+                    <div>
+                        <strong>Practical</strong>
+                        <span>We focus on what works in real life.</span>
+                    </div>
+                    <div>
+                        <strong>Growth-driven</strong>
+                        <span>We help ideas become lasting impact.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="kicker">Our values</span>
+                    <h2>Built on trust, clarity, and momentum</h2>
+                </div>
+
+                <div class="value-grid">
+                    <article class="value-card">
+                        <div class="service-icon" aria-hidden="true">01</div>
+                        <h3>Clarity</h3>
+                        <p>We simplify complexity so the path forward is easy to understand.</p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="service-icon" aria-hidden="true">02</div>
+                        <h3>Creativity</h3>
+                        <p>We blend practical thinking with fresh ideas that bring energy to the process.</p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="service-icon" aria-hidden="true">03</div>
+                        <h3>Execution</h3>
+                        <p>We turn plans into polished, usable solutions that create results.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="contact">
+            <div class="container cta-box">
+                <div>
+                    <span class="kicker">Let’s work together</span>
+                    <h2>Ready to build something meaningful?</h2>
+                </div>
+                <a href="./contact.html" class="btn btn-primary">Start a Conversation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© 2026 SumsyTech</p>
+            <a href="#top">Back to top</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileSidebar = document.querySelector('.mobile-sidebar');
+        const overlay = document.querySelector('.mobile-sidebar-overlay');
+        const closeButton = document.querySelector('.mobile-menu-close');
+
+        function toggleSidebar() {
+            const isOpen = mobileSidebar.classList.contains('open');
+            mobileSidebar.classList.toggle('open', !isOpen);
+            overlay.classList.toggle('active', !isOpen);
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileSidebar.setAttribute('aria-hidden', String(isOpen));
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleSidebar);
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', toggleSidebar);
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', toggleSidebar);
+        }
+
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileSidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mobileSidebar.setAttribute('aria-hidden', 'true');
+            });
+        });
+    </script>
+</body>
+</html>

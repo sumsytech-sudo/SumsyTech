@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumsyTech | Thank You</title>
+    <meta name="description" content="Thank you for contacting SumsyTech. We appreciate your message and will get back to you soon.">
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="./hero/hero.html" class="logo" aria-label="SumsyTech home">
+                <img src="./hero/sumsytech.jpg" alt="SumsyTech logo">
+                <span>SumsyTech</span>
+            </a>
+
+            <nav aria-label="Main navigation" class="desktop-nav">
+                <ul>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./team.html">Team</a></li>
+                    <li><a href="./contact.html" class="nav-button">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-sidebar-overlay" aria-hidden="true"></div>
+
+        <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile navigation" aria-hidden="true">
+            <div class="mobile-sidebar-header">
+                <a href="./hero/hero.html" class="logo" aria-label="SumsyTech home">
+                    <img src="./hero/sumsytech.jpg" alt="SumsyTech logo">
+                    <span>SumsyTech</span>
+                </a>
+                <button class="mobile-menu-close" aria-label="Close menu">×</button>
+            </div>
+
+            <nav aria-label="Mobile navigation links" class="mobile-nav">
+                <ul>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./team.html">Team</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+    <main class="thank-you-main">
+        <section class="container thank-you-box">
+            <span class="kicker">Thank you</span>
+            <h1>Your message has been received.</h1>
+            <p>We appreciate your interest in SumsyTech and will get back to you as soon as possible. We’re excited to learn more about your idea, project, or growth goal.</p>
+            <a href="./hero/hero.html" class="btn btn-primary">Back to Home</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© 2026 SumsyTech</p>
+            <a href="#top">Back to top</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileSidebar = document.querySelector('.mobile-sidebar');
+        const overlay = document.querySelector('.mobile-sidebar-overlay');
+        const closeButton = document.querySelector('.mobile-menu-close');
+
+        function toggleSidebar() {
+            const isOpen = mobileSidebar.classList.contains('open');
+            mobileSidebar.classList.toggle('open', !isOpen);
+            overlay.classList.toggle('active', !isOpen);
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileSidebar.setAttribute('aria-hidden', String(isOpen));
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleSidebar);
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', toggleSidebar);
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', toggleSidebar);
+        }
+
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileSidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mobileSidebar.setAttribute('aria-hidden', 'true');
+            });
+        });
+    </script>
+</body>
+</html>
