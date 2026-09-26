@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumsyTech | Learn. Build. Innovate.</title>
+    <meta name="description" content="SumsyTech helps people and businesses grow through technology, education, and innovation.">
+    <link rel="stylesheet" href="../index.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="./index.html" class="logo" aria-label="SumsyTech home">
+                <img src="./sumsytech.jpg" alt="SumsyTech logo">
+                <span>SumsyTech</span>
+            </a>
+
+            <nav aria-label="Main navigation" class="desktop-nav">
+                <ul>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../team.html">Team</a></li>
+                    <li><a href="../contact.html" class="nav-button">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileSidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="mobile-sidebar-overlay" aria-hidden="true"></div>
+
+        <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile navigation" aria-hidden="true">
+            <div class="mobile-sidebar-header">
+                <a href="./index.html" class="logo" aria-label="SumsyTech home">
+                    <img src="./sumsytech.jpg" alt="SumsyTech logo">
+                    <span>SumsyTech</span>
+                </a>
+                <button class="mobile-menu-close" aria-label="Close menu">×</button>
+            </div>
+
+            <nav aria-label="Mobile navigation links" class="mobile-nav">
+                <ul>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../team.html">Team</a></li>
+                    <li><a href="../contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </header>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="eyebrow">Technology • Education • Innovation</span>
+                    <h1>Learn. <span>Build.</span> Innovate.</h1>
+                    <p>We turn ideas into practical technology solutions that help people and businesses grow.</p>
+
+                    <div class="hero-buttons">
+                        <a href="../services.html" class="btn btn-primary">Explore Our Services</a>
+                        <a href="../contact.html" class="btn btn-secondary">Get in Touch</a>
+                    </div>
+
+                    <ul class="hero-points" aria-label="SumsyTech strengths">
+                        <li>Custom digital products</li>
+                        <li>Hands-on learning experiences</li>
+                        <li>Startup-ready strategy</li>
+                    </ul>
+                </div>
+
+                <div class="hero-logo" aria-label="SumsyTech technology symbol illustration">
+                    <img src="./sumsy-hero.jpg" alt="SumsyTech logo featuring the ST technology symbol">
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="kicker">What we do</span>
+                    <h2>Technology built around your needs</h2>
+                    <p>From software development to digital learning, SumsyTech creates solutions designed to solve real-world problems.</p>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+                        <h3>Web &amp; Mobile Development</h3>
+                        <p>Modern, responsive, and accessible digital experiences for businesses and communities.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">◎</div>
+                        <h3>Brand &amp; Digital Strategy</h3>
+                        <p>Clear positioning, compelling experiences, and digital growth plans that connect with audiences.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon" aria-hidden="true">✦</div>
+                        <h3>Learning &amp; Innovation</h3>
+                        <p>Practical training and innovation support that helps people build confidence and capability.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <span class="kicker">Why SumsyTech</span>
+                    <h2>We build practical solutions for real growth.</h2>
+                    <p>Our work combines creativity, technology, and education to help ideas move from concept to impact.</p>
+                    <p>Whether you need a modern digital product, a learning experience, or a strategic technology partner, we focus on clarity, quality, and measurable results.</p>
+                </div>
+
+                <div class="about-panel" aria-label="SumsyTech impact statistics">
+                    <div>
+                        <strong>100%</strong>
+                        <span>Custom approach</span>
+                    </div>
+                    <div>
+                        <strong>3 core</strong>
+                        <span>service pillars</span>
+                    </div>
+                    <div>
+                        <strong>Built</strong>
+                        <span>for growth</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="contact">
+            <div class="container cta-box">
+                <div>
+                    <span class="kicker">Let’s build something great</span>
+                    <h2>Ready to turn your idea into a real solution?</h2>
+                </div>
+                <a href="mailto:sumsytech@gmail.com" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>© 2026 SumsyTech</p>
+            <a href="#top">Back to top</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileSidebar = document.querySelector('.mobile-sidebar');
+        const overlay = document.querySelector('.mobile-sidebar-overlay');
+        const closeButton = document.querySelector('.mobile-menu-close');
+
+        function toggleSidebar() {
+            const isOpen = mobileSidebar.classList.contains('open');
+            mobileSidebar.classList.toggle('open', !isOpen);
+            overlay.classList.toggle('active', !isOpen);
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            mobileSidebar.setAttribute('aria-hidden', String(isOpen));
+        }
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', toggleSidebar);
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', toggleSidebar);
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', toggleSidebar);
+        }
+
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileSidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mobileSidebar.setAttribute('aria-hidden', 'true');
+            });
+        });
+    </script>
+</body>
+</html>
