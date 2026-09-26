@@ -19,7 +19,7 @@
                 <ul>
                     <li><a href="./services.html">Services</a></li>
                     <li><a href="./about.html">About</a></li>
-                    <li><a href="./team.html">Team</a></li>
+                    <li><a href="./team.html" aria-current="page">Team</a></li>
                     <li><a href="./contact.html" class="nav-button">Contact Us</a></li>
                 </ul>
             </nav>
@@ -33,7 +33,7 @@
 
         <div class="mobile-sidebar-overlay" aria-hidden="true"></div>
 
-        <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile navigation" aria-hidden="true">
+        <aside class="mobile-sidebar" id="mobileSidebar" aria-label="Mobile navigation" aria-hidden="true" inert>
             <div class="mobile-sidebar-header">
                 <a href="./hero/index.html" class="logo" aria-label="SumsyTech home">
                     <img src="./hero/sumsytech.jpg" alt="SumsyTech logo">
@@ -46,7 +46,7 @@
                 <ul>
                     <li><a href="./services.html">Services</a></li>
                     <li><a href="./about.html">About</a></li>
-                    <li><a href="./team.html">Team</a></li>
+                    <li><a href="./team.html" aria-current="page">Team</a></li>
                     <li><a href="./contact.html">Contact Us</a></li>
                 </ul>
             </nav>
@@ -184,33 +184,44 @@
         const overlay = document.querySelector('.mobile-sidebar-overlay');
         const closeButton = document.querySelector('.mobile-menu-close');
 
-        function toggleSidebar() {
-            const isOpen = mobileSidebar.classList.contains('open');
-            mobileSidebar.classList.toggle('open', !isOpen);
-            overlay.classList.toggle('active', !isOpen);
-            menuToggle.setAttribute('aria-expanded', String(!isOpen));
-            mobileSidebar.setAttribute('aria-hidden', String(isOpen));
+        function setSidebarOpen(isOpen, restoreFocus = false) {
+            mobileSidebar.classList.toggle('open', isOpen);
+            overlay.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+            mobileSidebar.setAttribute('aria-hidden', String(!isOpen));
+            mobileSidebar.inert = !isOpen;
+
+            if (isOpen) {
+                mobileSidebar.querySelector('.mobile-nav a')?.focus();
+            } else if (restoreFocus) {
+                menuToggle.focus();
+            }
         }
 
         if (menuToggle) {
-            menuToggle.addEventListener('click', toggleSidebar);
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileSidebar.classList.contains('open');
+                setSidebarOpen(!isOpen, isOpen);
+            });
         }
 
         if (closeButton) {
-            closeButton.addEventListener('click', toggleSidebar);
+            closeButton.addEventListener('click', () => setSidebarOpen(false, true));
         }
 
         if (overlay) {
-            overlay.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', () => setSidebarOpen(false, true));
         }
 
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && mobileSidebar.classList.contains('open')) {
+                setSidebarOpen(false, true);
+            }
+        });
+
         document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileSidebar.classList.remove('open');
-                overlay.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
-                mobileSidebar.setAttribute('aria-hidden', 'true');
-            });
+            link.addEventListener('click', () => setSidebarOpen(false));
         });
     </script>
 </body>

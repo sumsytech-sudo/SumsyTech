@@ -785,6 +785,10 @@ nav a:hover {
         grid-template-columns: 1fr;
     }
 
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .hero {
         padding-top: 28px;
     }
@@ -811,6 +815,14 @@ nav a:hover {
 }
 
 @media (max-width: 600px) {
+    html {
+        overflow-x: hidden;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
     .nav-container {
         min-height: 70px;
         position: relative;
@@ -862,20 +874,22 @@ nav a:hover {
         position: fixed;
         top: 0;
         right: 0;
-        width: min(80vw, 320px);
+            width: 0;
         height: 100vh;
         background: #fff;
         box-shadow: -18px 0 40px rgba(16, 24, 40, 0.15);
-        transform: translateX(105%);
-        transition: transform 0.25s ease;
+            overflow: hidden;
+            transition: width 0.25s ease, padding 0.25s ease;
         z-index: 1300;
-        padding: 20px 18px;
+            padding: 20px 0;
         display: flex;
         flex-direction: column;
     }
 
     .mobile-sidebar.open {
-        transform: translateX(0);
+            width: min(80vw, 320px);
+            padding-right: 18px;
+            padding-left: 18px;
     }
 
     .mobile-sidebar-header {
