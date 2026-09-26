@@ -258,7 +258,8 @@ nav a:hover {
 .about,
 .cta,
 .services-page-grid,
-.process-section {
+.process-section,
+.faq-section {
     padding: 90px 0;
 }
 
@@ -340,6 +341,169 @@ nav a:hover {
 .about-copy p {
     color: var(--muted);
     font-size: 1.06rem;
+}
+
+.faq-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 56px;
+    align-items: start;
+}
+
+.faq-heading {
+    position: sticky;
+    top: 110px;
+    margin: 0;
+    text-align: left;
+}
+
+.faq-list {
+    display: grid;
+    gap: 14px;
+}
+
+.faq-list details {
+    background: var(--surface-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 0 22px;
+}
+
+.faq-list summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 20px 28px 20px 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.faq-list details[open] summary::after {
+    content: "-";
+}
+
+.faq-list details p {
+    color: var(--muted);
+    padding: 0 0 20px;
+    max-width: 680px;
+}
+
+.pricing-section {
+    padding: 90px 0;
+    background: var(--surface-alt);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px 26px;
+    box-shadow: 0 10px 24px rgba(16, 24, 40, 0.04);
+}
+
+.pricing-card-featured {
+    border: 2px solid var(--primary);
+    box-shadow: 0 18px 36px rgba(23, 105, 255, 0.14);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -14px;
+    right: 20px;
+    background: var(--primary);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.pricing-label {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    margin: 10px 0 8px;
+}
+
+.pricing-description {
+    color: var(--muted);
+    min-height: 52px;
+}
+
+.pricing-amount {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 24px 0 20px;
+}
+
+.pricing-amount span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.pricing-card .btn {
+    width: 100%;
+}
+
+.pricing-card ul {
+    display: grid;
+    gap: 11px;
+    list-style: none;
+    margin-top: 26px;
+    color: #344054;
+}
+
+.pricing-card li {
+    position: relative;
+    padding-left: 22px;
+}
+
+.pricing-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.pricing-note {
+    max-width: 760px;
+    margin: 28px auto 0;
+    color: var(--muted);
+    text-align: center;
 }
 
 .service-grid {
@@ -774,6 +938,7 @@ nav a:hover {
     .hero-container,
     .about-grid,
     .service-grid,
+    .pricing-grid,
     .services-page-hero-inner,
     .page-hero-inner,
     .team-hero-layout,
@@ -807,6 +972,15 @@ nav a:hover {
     .value-grid,
     .team-grid {
         gap: 18px;
+    }
+
+    .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .faq-heading {
+        position: static;
     }
 
     .form-row {
